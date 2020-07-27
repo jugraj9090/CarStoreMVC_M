@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Admin_Dashboard";
+}
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="jumbotron">
+            <h1>Welcome to the dashboard area </h1>
+            <hr />
+
+            <h3 class="btn btn-success">@Html.ActionLink("View All Queries", "QueryList", "Home") </h3>
+
+            <h3 class="btn btn-success">@Html.ActionLink("View All Car Details", "CarList", "CarStore") </h3>
+
+
+            <h3 class="btn btn-success">@Html.ActionLink("View All Employees", "StaffList", "Staff") </h3>
+
+            <h3 class="btn btn-success">@Html.ActionLink("View All Sale", "SaleList", "Sale") </h3>
+
+
+
+            <br/><br /><br /><br />
+            <h1 class="btn btn-danger"> @Html.ActionLink("Index Page ", "Index", "Home") </h1>
+
+        </div>
+
+    </div>
+
+</div>
+
+

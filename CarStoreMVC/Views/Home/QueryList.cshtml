@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CarStoreMVC.Models.ContactRecord>
+
+@{
+    ViewBag.Title = "QueryList";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>QueryList</h2>
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Contact)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Message)
+                    </th>
+                    <th>Delete </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contact)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Message)
+                        </td>
+                        <td class="btn btn-warning">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+
+            <h1 class="btn btn-danger"> @Html.ActionLink("DashBoard","Admin_Dashboard", "Home") </h1>
+
+
+        </div>
+
+    </div>
+
+</div>

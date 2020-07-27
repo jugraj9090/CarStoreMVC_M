@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CarStoreMVC.Models.SaleRecord>
+
+@{
+    ViewBag.Title = "SaleList";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>Sale Detail </h2>
+
+            <p>
+                @Html.ActionLink("Record New Sale ", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Contact)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Model)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>Edit </th>
+                    <th>Delete</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Contact)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Model)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td class="btn btn-warning">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                        </td>
+                        <td class="btn btn-success">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+
+            <h1 class="btn btn-danger"> @Html.ActionLink("DashBoard", "Admin_Dashboard", "Home") </h1>
+
+
+        </div>
+
+
+    </div>
+</div>
+
